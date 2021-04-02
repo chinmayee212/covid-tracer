@@ -13,11 +13,15 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { PerfectScrollbarModule, PerfectScrollbarConfigInterface, PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 
+const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
+};
 // tslint:disable-next-line: typedef
 export function HttpLoaderFactory(http: HttpClient){
   return new TranslateHttpLoader(http);
 }
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,6 +36,7 @@ export function HttpLoaderFactory(http: HttpClient){
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    PerfectScrollbarModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -44,9 +49,14 @@ export function HttpLoaderFactory(http: HttpClient){
     LayoutComponent,
     FooterComponent,
     TopbarComponent,
+    PerfectScrollbarModule,
 
   ],
-  providers: [],
+  providers: [{
+    provide: PERFECT_SCROLLBAR_CONFIG,
+    useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
+  }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

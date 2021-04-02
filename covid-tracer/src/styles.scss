@@ -5,3 +5,15 @@
 @import "./node_modules/bootstrap/scss/variables";
 @import "./node_modules/bootstrap/scss/bootstrap";
 @import "./node_modules/bootstrap/scss/mixins.scss";
+@import "./assets/scss/variables";
+// Structure
+@import "./assets/scss/custom/structure/_general";
+@import "./assets/scss/custom/structure/_horizontal-nav";
+@import "./assets/scss/custom/structure/_topbar";
+@import "./assets/scss/custom/structure/_footer";
+
+//Components
+@import "./assets/scss/custom/components/widgets";
+
+// Plugins
+@import "./assets/scss/custom/plugins/waves";
