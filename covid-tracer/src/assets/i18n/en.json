@@ -38,6 +38,16 @@
           "7": "per million",
           "8": "remaining"
       },
+      "News" : {
+        "1": "Keywords",
+        "2": "Country ",
+        "3": "Deaths",
+        "4": "Recoveries",
+        "5": "Critical",
+        "6": "today",
+        "7": "per million",
+        "8": "remaining"
+    },
       "RateDistribution": {
           "1": "Rate Distribution"
       },

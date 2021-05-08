@@ -32,6 +32,7 @@ public todayRecovered;
   public translations: any = {};
   public fuse: any;
   public fuseResults: any[];
+  public news;
 
   constructor(public getDataservice: GetdataService, public zone: NgZone, public translate: TranslateService) { }
 
@@ -67,10 +68,26 @@ public todayRecovered;
         distance: 100,
         minMatchCharLength: 1,
         keys: [
-          "country"
+          'country'
         ]
       });
 
+   });
+
+    this.getDataservice.getnews('virus', 'in').subscribe(getNewsdata => {
+    this.isLoadingCountries = false;
+    this.news = getNewsdata['data'];
+      console.log(getNewsdata['data']);
+    this.fuse = new Fuse(this.news, {
+      shouldSort: true,
+      threshold: 0.6,
+      location: 0,
+      distance: 100,
+      minMatchCharLength: 1,
+      keys: [
+        'news'
+      ]
+    });
    });
    }
 
@@ -83,6 +100,24 @@ public todayRecovered;
       return;
     }
     this.countries = this.fuse.list;
+  }
+  // tslint:disable-next-line: typedef
+  keywords(key1,key){
+    if (key) {
+      this.news = this.fuse.search(key);
+
+    }
+    this.news = this.fuse.list;
+
+  }
+  // tslint:disable-next-line: typedef
+  language(key1,key){
+    if (key) {
+      this.news = this.fuse.search(key);
+
+    }
+    this.news = this.fuse.list;
+
   }
 
 
