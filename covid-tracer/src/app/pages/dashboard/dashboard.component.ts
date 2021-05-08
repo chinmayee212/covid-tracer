@@ -77,7 +77,9 @@ public todayRecovered;
     this.getDataservice.getnews('virus', 'in').subscribe(getNewsdata => {
     this.isLoadingCountries = false;
     this.news = getNewsdata['data'];
-      console.log(getNewsdata['data']);
+    // this.cleaner(this.news);
+    // console.log(getNewsdata['data']);
+
     this.fuse = new Fuse(this.news, {
       shouldSort: true,
       threshold: 0.6,
@@ -90,6 +92,8 @@ public todayRecovered;
     });
    });
    }
+
+
 
    // tslint:disable-next-line: typedef
    searchCountries(key) {

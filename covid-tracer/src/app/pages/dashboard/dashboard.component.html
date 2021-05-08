@@ -169,7 +169,7 @@
         </h4>
         <div class="form-group row">
           <div class="col-md-12 col-12">
-            <input
+            <!-- <input
               type="text"
               id="example-placeholder"
               (keyup)="searchCountries($event.target.value)"
@@ -177,7 +177,7 @@
               placeholder="{{ 'Home.AffectedCountries.3' | translate }}  {{
                 'Home.AffectedCountries.1' | translate
               }}"
-            />
+            /> -->
           </div>
         </div>
         <div class="fa-3x text-center" [class.d-none]="!isLoadingCountries">
@@ -228,7 +228,7 @@
           <div
             class="btn btn-xs btn-lighten-primary waves-effect waves-light width-xs mr-md-1 mr-0">
 
-            <select
+            <!-- <select
               class="custom-select"
               #sortBy
               (change)="keywords(sortBy.value, $event.target.value)"
@@ -251,13 +251,13 @@
               <option value="travel">
                 {{ "Home.AffectedCountries.9" | translate }}
               </option>
-            </select>
+            </select> -->
           </div>
 
           <div
             class="btn btn-xs btn-lighten-danger waves-effect waves-light width-xs mr-md-1 mr-0"
           >
-            <select
+            <!-- <select
               class="custom-select"
               (change)="language(sortBy.value, $event.target.value)"
             >
@@ -279,7 +279,7 @@
               <option value="ru">
                 {{ "Home.AffectedCountries.9" | translate }}
               </option>
-            </select>
+            </select> -->
           </div>
         </div>
         <h4 class="header-title mt-0 mb-3 mt-md-0">
@@ -302,7 +302,7 @@
               <h5 class="infectedCountryName mt-0 mb-1">{{ new.title | titlecase }}</h5>
               <p class="infectedCountryDetails font-weight-bold">
                 <!-- <span class="text-primary">{{new.url }}</span> -->
-                <span class="text-danger">{{ new.description| titlecase }}</span>
+                <span class="text-danger" id="description">{{ new.description| titlecase }}</span>
               </p>
               <!-- <p class="infectedCountryCases text-primary">{{new.category}}</p> -->
               <p class="infectedCountryDeaths text-primary text-right">
